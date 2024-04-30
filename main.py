@@ -4,10 +4,11 @@ from chatbot import get_response
 from scrape import scrape
 from preprocess import preprocess_text
 import os
+import openai
 
-api_key = os.environ.get('API_KEY')
+# Fetch the API key from environment secrets
+api_key = os.environ["SECRET_API_KEY"]
 
-# Your OpenAI API key
 
 st.title('Chatbot and Amazon Scraper')
 
@@ -32,5 +33,5 @@ if user_input:
             st.write("No products found or failed to scrape Amazon.")
     else:
         # Process input as a chat message
-        response = get_response(user_input, api_key)
+        response = get_response(user_input)
         st.text_area("Bot says:", value=response, height=200)
