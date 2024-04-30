@@ -1,0 +1,6 @@
+nltk
+streamlit
+openai
+selenium
+webdriver-manager
+pandas
